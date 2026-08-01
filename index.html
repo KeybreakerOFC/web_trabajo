@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-    <title>The Best Beyond | Firma Global de Soluciones Tecnológicas y Estrategia</title>
+    <title>Corporación NextEra | Soluciones Empresariales de Alto Nivel</title>
     
     <!-- Metadatos SEO y Open Graph -->
-    <meta name="description" content="The Best Beyond - Liderazgo en transformación digital, ciberseguridad, desarrollo a medida y consultoría estratégica empresarial." />
+    <meta name="description" content="Corporación NextEra - Liderazgo en transformación digital, ciberseguridad, desarrollo a medida y consultoría estratégica." />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="The Best Beyond | Soluciones Empresariales" />
+    <meta property="og:title" content="Corporación NextEra" />
     <meta property="og:description" content="Innovación, arquitectura de software y estrategia corporativa de alto impacto." />
     <meta property="og:url" content="https://thebestbeyond.wordpress.com/" />
     <meta property="og:image" content="https://thebestbeyond.wordpress.com/wp-content/uploads/2022/05/inshot_20220512_142106117.jpg" />
@@ -20,23 +20,23 @@
 
     <style>
         :root {
-            --primary: #0F172A;
-            --primary-light: #1E293B;
-            --accent: #2563EB;
-            --accent-hover: #1D4ED8;
-            --accent-glow: rgba(37, 99, 235, 0.25);
-            --cyan: #38BDF8;
-            --text-main: #F8FAFC;
-            --text-muted: #94A3B8;
-            --bg-body: #090D16;
-            --card-bg: rgba(30, 41, 59, 0.7);
-            --card-bg-hover: rgba(30, 41, 59, 0.95);
-            --border-color: rgba(255, 255, 255, 0.08);
-            --border-active: rgba(38, 99, 235, 0.4);
+            --primary: #0A0A0C;
+            --primary-light: #141417;
+            --accent: #D4AF37; /* Elegante Dorado / Gold */
+            --accent-hover: #F3E5AB;
+            --accent-glow: rgba(212, 175, 55, 0.2);
+            --gold-gradient: linear-gradient(135deg, #F3E5AB 0%, #D4AF37 50%, #AA7C11 100%);
+            --text-main: #FFFFFF;
+            --text-muted: #A1A1AA;
+            --bg-body: #050506;
+            --card-bg: rgba(20, 20, 23, 0.8);
+            --card-bg-hover: rgba(28, 28, 33, 0.95);
+            --border-color: rgba(212, 175, 55, 0.18);
+            --border-active: rgba(212, 175, 55, 0.5);
             --radius-sm: 8px;
             --radius-md: 16px;
             --radius-lg: 24px;
-            --shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.6);
+            --shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.8);
             --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
@@ -79,7 +79,7 @@
             background: var(--accent-glow);
             border: 1px solid var(--border-active);
             border-radius: 50px;
-            color: var(--cyan);
+            color: var(--accent);
             font-size: 0.8rem;
             font-weight: 600;
             text-transform: uppercase;
@@ -107,7 +107,7 @@
             position: sticky;
             top: 0;
             z-index: 1000;
-            background: rgba(15, 23, 42, 0.85);
+            background: rgba(10, 10, 12, 0.9);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
             border-bottom: 1px solid var(--border-color);
@@ -121,9 +121,9 @@
         }
 
         .logo-text {
-            font-size: 1.3rem;
+            font-size: 1.25rem;
             font-weight: 800;
-            letter-spacing: -0.03em;
+            letter-spacing: -0.02em;
             color: var(--text-main);
             text-decoration: none;
             text-transform: uppercase;
@@ -133,7 +133,9 @@
         }
 
         .logo-text span {
-            color: var(--accent);
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .nav-links {
@@ -149,22 +151,22 @@
             font-size: 0.92rem;
             font-weight: 500;
             transition: var(--transition);
-            min-height: 48px; /* Touch target optimizado para Samsung */
+            min-height: 48px; /* Touch target optimizado */
             display: inline-flex;
             align-items: center;
         }
 
         .nav-links a:hover {
-            color: var(--text-main);
+            color: var(--accent);
         }
 
         .btn-primary {
-            background: var(--accent);
-            color: #ffffff !important;
+            background: var(--gold-gradient);
+            color: #050506 !important;
             padding: 0.75rem 1.6rem;
             border-radius: var(--radius-sm);
             text-decoration: none;
-            font-weight: 600;
+            font-weight: 700;
             font-size: 0.9rem;
             transition: var(--transition);
             border: none;
@@ -177,9 +179,9 @@
         }
 
         .btn-primary:hover {
-            background: var(--accent-hover);
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+            filter: brightness(1.1);
         }
 
         .btn-secondary {
@@ -199,8 +201,9 @@
         }
 
         .btn-secondary:hover {
-            border-color: var(--text-muted);
-            background: rgba(255, 255, 255, 0.05);
+            border-color: var(--accent);
+            color: var(--accent);
+            background: rgba(212, 175, 55, 0.05);
         }
 
         .menu-toggle {
@@ -228,7 +231,7 @@
             line-height: 1.1;
             margin-bottom: 1.5rem;
             letter-spacing: -0.03em;
-            background: linear-gradient(135deg, #FFFFFF 30%, #94A3B8 100%);
+            background: linear-gradient(135deg, #FFFFFF 40%, #D4AF37 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -270,7 +273,7 @@
         .hero-banner-content {
             padding: 2.5rem;
             text-align: left;
-            background: linear-gradient(180deg, rgba(15,23,42,0.4) 0%, rgba(15,23,42,0.95) 100%);
+            background: linear-gradient(180deg, rgba(10,10,12,0.4) 0%, rgba(10,10,12,0.98) 100%);
         }
 
         /* Barra de Estadísticas */
@@ -289,7 +292,7 @@
         .stat-item h3 {
             font-size: 2.2rem;
             font-weight: 800;
-            color: var(--cyan);
+            color: var(--accent);
         }
 
         .stat-item p {
@@ -337,9 +340,9 @@
 
         .about-features li::before {
             content: "✓";
-            color: var(--accent);
+            color: #050506;
             font-weight: 800;
-            background: var(--accent-glow);
+            background: var(--accent);
             width: 24px;
             height: 24px;
             border-radius: 50%;
@@ -412,7 +415,7 @@
         }
 
         .service-link {
-            color: var(--cyan);
+            color: var(--accent);
             text-decoration: none;
             font-weight: 600;
             font-size: 0.9rem;
@@ -424,6 +427,7 @@
 
         .service-link:hover {
             gap: 0.7rem;
+            color: var(--accent-hover);
         }
 
         /* Metodología / Proceso */
@@ -448,7 +452,7 @@
         .step-num {
             font-size: 2.8rem;
             font-weight: 800;
-            color: rgba(255, 255, 255, 0.08);
+            color: rgba(212, 175, 55, 0.12);
             position: absolute;
             top: 1rem;
             right: 1.5rem;
@@ -506,7 +510,7 @@
             align-items: center;
             justify-content: center;
             font-weight: 700;
-            color: var(--cyan);
+            color: var(--accent);
         }
 
         .client-details h5 {
@@ -558,7 +562,7 @@
             color: var(--text-muted);
             font-size: 0.95rem;
             display: none;
-            border-top: 1px solid rgba(255, 255, 255, 0.04);
+            border-top: 1px solid rgba(212, 175, 55, 0.1);
         }
 
         .faq-item.active .faq-answer {
@@ -567,6 +571,7 @@
 
         .faq-item.active .faq-icon {
             transform: rotate(180deg);
+            color: var(--accent);
         }
 
         .faq-icon {
@@ -613,7 +618,7 @@
 
         .contact-details strong {
             display: block;
-            color: var(--cyan);
+            color: var(--accent);
             font-size: 0.85rem;
             text-transform: uppercase;
         }
@@ -629,7 +634,7 @@
         .form-group textarea {
             width: 100%;
             padding: 0.9rem 1.2rem;
-            background: rgba(15, 23, 42, 0.8);
+            background: rgba(10, 10, 12, 0.85);
             border: 1px solid var(--border-color);
             border-radius: var(--radius-sm);
             color: var(--text-main);
@@ -695,7 +700,7 @@
         }
 
         .footer-column ul a:hover {
-            color: var(--text-main);
+            color: var(--accent);
         }
 
         .footer-bottom {
@@ -775,7 +780,7 @@
     <!-- Navegación Encabezado -->
     <header>
         <div class="container nav-wrapper">
-            <a href="#" class="logo-text">The Best <span>Beyond</span></a>
+            <a href="#" class="logo-text">Corporación <span>NextEra</span></a>
             
             <button class="menu-toggle" id="menuToggle" aria-label="Abrir Menú de Navegación">☰</button>
             
@@ -807,10 +812,10 @@
 
         <!-- Tarjeta / Banner Destacado -->
         <div class="hero-banner">
-            <img src="https://thebestbeyond.wordpress.com/wp-content/uploads/2022/05/inshot_20220512_142106117.jpg" alt="The Best Beyond Infraestructura Corporativa" loading="lazy" />
+            <img src="https://thebestbeyond.wordpress.com/wp-content/uploads/2022/05/inshot_20220512_142106117.jpg" alt="Corporación NextEra Infraestructura Corporativa" loading="lazy" />
             <div class="hero-banner-content">
                 <span class="section-badge">Visión Global</span>
-                <h2 style="font-size: 1.8rem; font-weight: 700; margin-bottom: 0.5rem;">Excelencia Operativa Integrada</h2>
+                <h2 style="font-size: 1.8rem; font-weight: 700; margin-bottom: 0.5rem; color: #FFFFFF;">Excelencia Operativa Integrada</h2>
                 <p style="color: var(--text-muted); max-width: 750px;">
                     Nuestra infraestructura combina capacidades avanzadas de ingeniería, ciberdefensa proactiva e inteligencia estratégica para mantener a su empresa por delante de los cambios del mercado.
                 </p>
@@ -842,7 +847,7 @@
             <div class="about-text">
                 <span class="section-badge">Sobre Nosotros</span>
                 <h2>Ingeniería y Estrategia sin Fronteras</h2>
-                <p>En <strong>The Best Beyond</strong> combinamos el rigor analítico con tecnología punta para resolver los desafíos más complejos de las organizaciones modernas.</p>
+                <p>En <strong>Corporación NextEra</strong> combinamos el rigor analítico con tecnología punta para resolver los desafíos más complejos de las organizaciones modernas.</p>
                 <p>Nos especializamos en construir ecosistemas sólidos, seguros y altamente escalables que garantizan la continuidad del negocio en entornos volátiles.</p>
                 
                 <ul class="about-features">
@@ -853,11 +858,11 @@
             </div>
 
             <div class="about-card-box">
-                <h3 style="font-size: 1.4rem; font-weight: 700; margin-bottom: 1rem; color: var(--cyan);">Nuestra Misión</h3>
+                <h3 style="font-size: 1.4rem; font-weight: 700; margin-bottom: 1rem; color: var(--accent);">Nuestra Misión</h3>
                 <p style="color: var(--text-muted); margin-bottom: 1.5rem;">
                     Proporcionar valor tangible a nuestros clientes mediante la automatización, el desarrollo de software seguro y la consultoría estratégica de alto nivel.
                 </p>
-                <div style="padding: 1rem; background: rgba(15, 23, 42, 0.8); border-radius: var(--radius-sm); border-left: 3px solid var(--accent);">
+                <div style="padding: 1rem; background: rgba(10, 10, 12, 0.9); border-radius: var(--radius-sm); border-left: 3px solid var(--accent);">
                     <p style="font-size: 0.88rem; font-style: italic; color: var(--text-main);">
                         "Ir más allá del estándar no es solo nuestra meta; es nuestro método diario."
                     </p>
@@ -972,7 +977,7 @@
 
             <div class="testimonials-grid">
                 <div class="testimonial-card">
-                    <p>"La reestructuración de nuestra infraestructura tecnológica realizada por The Best Beyond mejoró nuestro tiempo de respuesta en un 40%."</p>
+                    <p>"La reestructuración de nuestra infraestructura tecnológica realizada por Corporación NextEra mejoró nuestro tiempo de respuesta en un 40%."</p>
                     <div class="client-info">
                         <div class="client-avatar">CM</div>
                         <div class="client-details">
@@ -1065,7 +1070,7 @@
                         <li>
                             <div>
                                 <strong>Correo Electrónico</strong>
-                                <span>contacto@thebestbeyond.com</span>
+                                <span>contacto@nextera.com</span>
                             </div>
                         </li>
                         <li>
@@ -1098,7 +1103,7 @@
                         <textarea placeholder="Detalles de su consulta o proyecto..." required></textarea>
                     </div>
                     <button type="submit" class="btn-primary" style="width: 100%;">Enviar Mensaje</button>
-                    <div id="formStatus" style="font-size: 0.85rem; color: var(--cyan); text-align: center; display: none;">
+                    <div id="formStatus" style="font-size: 0.85rem; color: var(--accent); text-align: center; display: none;">
                         ¡Gracias! Tu mensaje ha sido enviado correctamente.
                     </div>
                 </form>
@@ -1112,7 +1117,7 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <a href="#" class="logo-text">The Best <span>Beyond</span></a>
+                    <a href="#" class="logo-text">Corporación <span>NextEra</span></a>
                     <p>Soluciones avanzadas en ciberseguridad, desarrollo a medida y estrategia corporativa. Impulsando la excelencia organizativa.</p>
                 </div>
 
@@ -1148,8 +1153,8 @@
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; 2026 The Best Beyond. Todos los derechos reservados.</p>
-                <p style="font-size: 0.8rem; color: var(--text-muted);">Optimizado para alto desempeño en dispositivos móviles y de escritorio.</p>
+                <p>&copy; 2026 Corporación NextEra. Todos los derechos reservados.</p>
+                <p style="font-size: 0.8rem; color: var(--text-muted);">Diseño optimizado en Negro, Blanco y Dorado Lux.</p>
             </div>
         </div>
     </footer>
