@@ -1,156 +1,467 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Corporación NextEra — Financiamiento empresarial de alto nivel</title>
-  <meta name="description" content="Corporación NextEra: financiamiento estratégico para empresas y proyectos de alto impacto en Latinoamérica." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/styles.css" />
-  <link rel="icon" href="img/favicon.ico" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Corporación NextEra — Financiamiento estratégico</title>
+<meta name="description" content="Corporación NextEra: financiamiento estratégico para empresarios y proyectos de alto impacto en Latinoamérica." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+/* ============ RESET & VARIABLES ============ */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --black: #0A0A0A;
+  --black-soft: #141414;
+  --black-card: #1a1a1a;
+  --gold: #C9A227;
+  --gold-light: #E5C76B;
+  --white: #FFFFFF;
+  --white-soft: #F7F5F0;
+  --gray: #B8B8B8;
+  --font-title: 'Playfair Display', serif;
+  --font-body: 'Inter', sans-serif;
+  --max: 1180px;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--black);
+  color: var(--white);
+  line-height: 1.7;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+.container { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+.narrow { max-width: 780px; }
+
+/* ============ TIPOGRAFÍA ============ */
+h1, h2, h3, h4 { font-family: var(--font-title); font-weight: 700; line-height: 1.15; letter-spacing: -0.5px; }
+h1 { font-size: clamp(2.5rem, 6vw, 5rem); }
+h2 { font-size: clamp(2rem, 4.5vw, 3.5rem); margin-bottom: 24px; }
+h3 { font-size: 1.4rem; margin-bottom: 12px; color: var(--gold); }
+h4 { font-size: 1.15rem; margin-bottom: 8px; color: var(--white); }
+h5 { font-size: 0.95rem; text-transform: uppercase; letter-spacing: 1.5px; color: var(--gold); margin-bottom: 16px; }
+p  { color: var(--gray); margin-bottom: 16px; }
+
+.eyebrow {
+  font-size: 0.78rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 600;
+  margin-bottom: 20px;
+  display: block;
+}
+.lead { font-size: 1.15rem; max-width: 640px; }
+
+/* ============ HEADER ============ */
+.site-header {
+  position: fixed; top: 0; left: 0; right: 0;
+  padding: 18px 0;
+  z-index: 1000;
+  transition: background 0.4s ease, padding 0.4s ease, border-color 0.4s;
+  border-bottom: 1px solid transparent;
+}
+.site-header.scrolled {
+  background: rgba(10,10,10,0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(201,162,39,0.25);
+}
+.header-inner { display: flex; align-items: center; justify-content: space-between; }
+.brand { display: flex; align-items: center; gap: 12px; }
+.brand-mark {
+  width: 44px; height: 44px;
+  display: grid; place-items: center;
+  background: var(--gold);
+  color: var(--black);
+  font-family: var(--font-title);
+  font-weight: 900;
+  font-size: 1.5rem;
+  border-radius: 4px;
+}
+.brand-text { display: flex; flex-direction: column; line-height: 1.15; }
+.brand-text strong { font-family: var(--font-title); font-size: 1.05rem; color: var(--white); }
+.brand-text small { font-size: 0.68rem; color: var(--gold); letter-spacing: 1px; text-transform: uppercase; }
+
+.main-nav { display: flex; align-items: center; gap: 32px; }
+.main-nav a {
+  font-size: 0.9rem;
+  color: var(--white);
+  opacity: 0.85;
+  transition: color .2s, opacity .2s;
+}
+.main-nav a:hover { color: var(--gold); opacity: 1; }
+.btn-nav {
+  border: 1px solid var(--gold);
+  padding: 10px 20px;
+  border-radius: 2px;
+  color: var(--gold) !important;
+  transition: all .25s;
+}
+.btn-nav:hover { background: var(--gold); color: var(--black) !important; }
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: 0;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 8px;
+}
+.nav-toggle span { width: 26px; height: 2px; background: var(--gold); display: block; transition: .3s; }
+
+/* ============ HERO ============ */
+.hero { padding: 180px 0 100px; text-align: center; position: relative; }
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 50%;
+  transform: translateX(-50%);
+  width: 800px; height: 800px;
+  background: radial-gradient(circle, rgba(201,162,39,0.12) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+.hero-inner { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; }
+.hero h1 { max-width: 900px; margin-bottom: 24px; }
+.hero h1 span { color: var(--gold); font-style: italic; }
+.hero .lead { margin: 0 auto 40px; }
+.hero-cta { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; margin-bottom: 70px; }
+
+.hero-image {
+  width: 100%;
+  max-width: 760px;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(201,162,39,0.3);
+  position: relative;
+}
+.hero-image img { width: 100%; height: 420px; object-fit: cover; }
+
+/* Placeholder elegante para imágenes */
+.img-placeholder {
+  width: 100%;
+  height: 100%;
+  min-height: 420px;
+  background:
+    linear-gradient(135deg, rgba(201,162,39,0.15) 0%, rgba(0,0,0,0.6) 100%),
+    repeating-linear-gradient(45deg, #141414 0px, #141414 20px, #1a1a1a 20px, #1a1a1a 40px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold);
+  font-family: var(--font-title);
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* ============ BOTONES ============ */
+.btn {
+  display: inline-block;
+  padding: 14px 32px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  border-radius: 2px;
+  transition: all .3s;
+  cursor: pointer;
+  border: 1px solid transparent;
+  font-family: var(--font-body);
+}
+.btn-gold { background: var(--gold); color: var(--black); }
+.btn-gold:hover { background: var(--gold-light); transform: translateY(-2px); }
+.btn-ghost { background: transparent; color: var(--white); border-color: rgba(255,255,255,0.3); }
+.btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
+.btn-dark { background: var(--black); color: var(--gold); }
+.btn-dark:hover { background: #000; transform: translateY(-2px); }
+.btn-outline-dark { border-color: var(--black); color: var(--black); }
+.btn-outline-dark:hover { background: var(--black); color: var(--gold); }
+
+/* ============ STRIP DORADO ============ */
+.strip { background: var(--gold); color: var(--black); padding: 50px 0; }
+.strip-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; text-align: center; }
+.strip-item h3 {
+  font-family: var(--font-title);
+  font-size: 2.4rem;
+  color: var(--black);
+  margin-bottom: 6px;
+  font-weight: 900;
+}
+.strip-item p { color: rgba(10,10,10,0.75); margin: 0; font-weight: 500; font-size: 0.95rem; }
+
+/* ============ SECCIONES ============ */
+.section { padding: 110px 0; }
+.section-dark { background: var(--black-soft); }
+.section h2 { max-width: 780px; }
+.section-text { max-width: 780px; margin: 0 auto; }
+.section-text p { font-size: 1.05rem; }
+
+/* ============ CARDS ============ */
+.cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 60px; }
+.card {
+  background: linear-gradient(180deg, #1a1a1a 0%, #101010 100%);
+  border: 1px solid rgba(201,162,39,0.2);
+  padding: 40px 30px;
+  border-radius: 6px;
+  transition: all .35s;
+  position: relative;
+  overflow: hidden;
+}
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 3px; height: 100%;
+  background: var(--gold);
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform .4s;
+}
+.card:hover { border-color: var(--gold); transform: translateY(-6px); }
+.card:hover::before { transform: scaleY(1); }
+.card p { margin: 0; font-size: 0.95rem; }
+
+/* ============ STEPS ============ */
+.steps {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  margin-top: 60px;
+}
+.steps li { border-top: 2px solid var(--gold); padding-top: 24px; }
+.steps span {
+  font-family: var(--font-title);
+  font-size: 2.6rem;
+  color: var(--gold);
+  display: block;
+  margin-bottom: 12px;
+  font-weight: 900;
+}
+.steps h4 { color: var(--white); }
+.steps p { font-size: 0.9rem; margin: 0; }
+
+/* ============ CTA FINAL ============ */
+.cta { background: var(--gold); color: var(--black); padding: 100px 0; text-align: center; }
+.cta-inner h2 { color: var(--black); }
+.cta-inner p { color: rgba(10,10,10,0.8); max-width: 600px; margin: 0 auto 40px; font-size: 1.05rem; }
+.cta-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+/* ============ FOOTER ============ */
+.site-footer { background: #050505; padding: 70px 0 0; border-top: 1px solid rgba(201,162,39,0.2); }
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; padding-bottom: 50px; }
+.footer-grid h4 { color: var(--gold); font-family: var(--font-title); font-size: 1.2rem; margin-bottom: 16px; }
+.footer-grid p, .footer-grid a {
+  color: var(--gray);
+  font-size: 0.9rem;
+  display: block;
+  margin-bottom: 8px;
+  transition: color .2s;
+}
+.footer-grid a:hover { color: var(--gold); }
+.footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding: 24px 0; text-align: center; }
+.footer-bottom p { font-size: 0.82rem; margin: 0; color: #666; }
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 900px) {
+  .main-nav { display: none; }
+  .nav-toggle { display: flex; }
+  .main-nav.open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    right: 24px;
+    background: var(--black-soft);
+    padding: 24px;
+    border: 1px solid rgba(201,162,39,0.3);
+    border-radius: 6px;
+    gap: 18px;
+    min-width: 220px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+  }
+  .cards, .steps { grid-template-columns: 1fr; }
+  .strip-grid { grid-template-columns: 1fr; gap: 24px; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .hero { padding: 140px 0 70px; }
+  .section { padding: 70px 0; }
+  .hero-image img, .img-placeholder { height: 280px; min-height: 280px; }
+  .cta { padding: 70px 0; }
+}
+</style>
 </head>
 <body>
 
-  <!-- HEADER -->
-  <header class="site-header" id="header">
-    <div class="container header-inner">
-      <a href="index.html" class="brand">
-        <span class="brand-mark">N</span>
-        <span class="brand-text">
-          <strong>Corporación NextEra</strong>
-          <small>Financiamiento estratégico</small>
-        </span>
-      </a>
-      <nav class="main-nav" id="mainNav">
-        <a href="#inicio" class="active">Inicio</a>
-        <a href="#nosotros">Nosotros</a>
-        <a href="#servicios">Servicios</a>
-        <a href="#proceso">Proceso</a>
-        <a href="#contacto" class="btn-nav">Contacto</a>
-      </nav>
-      <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </header>
+<!-- HEADER -->
+<header class="site-header" id="header">
+  <div class="container header-inner">
+    <a href="#inicio" class="brand">
+      <span class="brand-mark">N</span>
+      <span class="brand-text">
+        <strong>Corporación NextEra</strong>
+        <small>Financiamiento estratégico</small>
+      </span>
+    </a>
+    <nav class="main-nav" id="mainNav">
+      <a href="#inicio">Inicio</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#proceso">Proceso</a>
+      <a href="#contacto" class="btn-nav">Contacto</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
 
-  <!-- HERO -->
-  <section class="hero" id="inicio">
-    <div class="container hero-inner">
-      <p class="eyebrow">Corporación NextEra</p>
-      <h1>Financiamos el futuro de tu empresa.</h1>
-      <p class="lead">Capital estratégico para empresarios y proyectos de alto impacto en Latinoamérica. Sin tasas de interés. Sin límites para crecer.</p>
-      <div class="hero-cta">
-        <a href="#contacto" class="btn btn-gold">Solicitar información</a>
-        <a href="#nosotros" class="btn btn-ghost">Conócenos</a>
-      </div>
-      <figure class="hero-image">
-        <img src="img/hero-bg.jpg" alt="Corporación NextEra" />
-      </figure>
+<!-- HERO -->
+<section class="hero" id="inicio">
+  <div class="container hero-inner">
+    <span class="eyebrow">Corporación NextEra</span>
+    <h1>Financiamos el <span>futuro</span> de tu empresa.</h1>
+    <p class="lead">Capital estratégico para empresarios y proyectos de alto impacto en Latinoamérica. Sin tasas de interés. Sin límites para crecer.</p>
+    <div class="hero-cta">
+      <a href="#contacto" class="btn btn-gold">Solicitar información</a>
+      <a href="#nosotros" class="btn btn-ghost">Conócenos</a>
     </div>
-  </section>
+    <figure class="hero-image">
+      <div class="img-placeholder">Imagen corporativa</div>
+    </figure>
+  </div>
+</section>
 
-  <!-- FRANJA BENEFICIOS -->
-  <section class="strip">
-    <div class="container strip-grid">
-      <div class="strip-item">
-        <h3>0%</h3>
-        <p>Tasas de interés</p>
-      </div>
-      <div class="strip-item">
-        <h3>$1M – $5M</h3>
-        <p>Montos a financiar (USD)</p>
-      </div>
-      <div class="strip-item">
-        <h3>3 – 6 años</h3>
-        <p>Plazos de devolución</p>
-      </div>
+<!-- STRIP DORADO -->
+<section class="strip">
+  <div class="container strip-grid">
+    <div class="strip-item">
+      <h3>0%</h3>
+      <p>Tasas de interés</p>
     </div>
-  </section>
+    <div class="strip-item">
+      <h3>$1M – $5M</h3>
+      <p>Montos a financiar (USD)</p>
+    </div>
+    <div class="strip-item">
+      <h3>3 – 6 años</h3>
+      <p>Plazos de devolución</p>
+    </div>
+  </div>
+</section>
 
-  <!-- NOSOTROS -->
-  <section class="section" id="nosotros">
-    <div class="container narrow">
-      <p class="eyebrow">¿Quiénes somos?</p>
+<!-- NOSOTROS -->
+<section class="section" id="nosotros">
+  <div class="container">
+    <div class="section-text">
+      <span class="eyebrow">¿Quiénes somos?</span>
       <h2>Un grupo financiero con visión de futuro.</h2>
       <p>Somos uno de los grupos financieros más sólidos de Latinoamérica, trabajando de la mano con empresarios locales para impulsar proyectos que generan valor real. Combinamos capital, experiencia y confianza.</p>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- SERVICIOS -->
-  <section class="section section-dark" id="servicios">
-    <div class="container">
-      <p class="eyebrow gold">¿Qué hacemos?</p>
-      <h2>Financiamiento a la medida de tu proyecto.</h2>
-      <div class="cards">
-        <article class="card">
-          <h3>Capital para empresas</h3>
-          <p>Financiamos empresas constituidas y proyectos que requieren una inyección de capital para escalar.</p>
-        </article>
-        <article class="card">
-          <h3>Beneficios exclusivos</h3>
-          <p>Obtén el 30% del capital a invertir y conserva el 100% de las ganancias generadas.</p>
-        </article>
-        <article class="card">
-          <h3>Devolución flexible</h3>
-          <p>Reintegra el 70% del capital en bienes raíces, empresas o microempresas constituidas.</p>
-        </article>
-      </div>
+<!-- SERVICIOS -->
+<section class="section section-dark" id="servicios">
+  <div class="container">
+    <span class="eyebrow">¿Qué hacemos?</span>
+    <h2>Financiamiento a la medida de tu proyecto.</h2>
+    <div class="cards">
+      <article class="card">
+        <h3>Capital para empresas</h3>
+        <p>Financiamos empresas constituidas y proyectos que requieren una inyección de capital para escalar.</p>
+      </article>
+      <article class="card">
+        <h3>Beneficios exclusivos</h3>
+        <p>Obtén el 30% del capital a invertir y conserva el 100% de las ganancias generadas.</p>
+      </article>
+      <article class="card">
+        <h3>Devolución flexible</h3>
+        <p>Reintegra el 70% del capital en bienes raíces, empresas o microempresas constituidas.</p>
+      </article>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- PROCESO -->
-  <section class="section" id="proceso">
-    <div class="container">
-      <p class="eyebrow">¿Cómo trabajamos?</p>
-      <h2>Un proceso claro, seguro y confidencial.</h2>
-      <ol class="steps">
-        <li><span>01</span><h4>Envía tu proyecto</h4><p>Preséntalo en PDF con el monto requerido y su destino.</p></li>
-        <li><span>02</span><h4>Evaluación</h4><p>Nuestro comité analiza viabilidad, capacidad y sustento.</p></li>
-        <li><span>03</span><h4>Acuerdo</h4><p>Firmamos el convenio con condiciones transparentes.</p></li>
-        <li><span>04</span><h4>Desembolso</h4><p>Recibes el capital y comienzas a crecer.</p></li>
-      </ol>
-    </div>
-  </section>
+<!-- PROCESO -->
+<section class="section" id="proceso">
+  <div class="container">
+    <span class="eyebrow">¿Cómo trabajamos?</span>
+    <h2>Un proceso claro, seguro y confidencial.</h2>
+    <ol class="steps">
+      <li><span>01</span><h4>Envía tu proyecto</h4><p>Preséntalo en PDF con el monto requerido y su destino.</p></li>
+      <li><span>02</span><h4>Evaluación</h4><p>Nuestro comité analiza viabilidad, capacidad y sustento.</p></li>
+      <li><span>03</span><h4>Acuerdo</h4><p>Firmamos el convenio con condiciones transparentes.</p></li>
+      <li><span>04</span><h4>Desembolso</h4><p>Recibes el capital y comienzas a crecer.</p></li>
+    </ol>
+  </div>
+</section>
 
-  <!-- CTA FINAL -->
-  <section class="cta" id="contacto">
-    <div class="container cta-inner">
-      <h2>Comienza hoy con Corporación NextEra.</h2>
-      <p>Comunícate con tu asesor y descubre cómo podemos impulsar tu proyecto.</p>
-      <div class="cta-actions">
-        <a href="tel:+000000000" class="btn btn-dark">Llamar ahora</a>
-        <a href="mailto:contacto@nextera.com" class="btn btn-outline-dark">Enviar correo</a>
-      </div>
+<!-- CTA FINAL -->
+<section class="cta" id="contacto">
+  <div class="container cta-inner">
+    <h2>Comienza hoy con Corporación NextEra.</h2>
+    <p>Comunícate con tu asesor y descubre cómo podemos impulsar tu proyecto.</p>
+    <div class="cta-actions">
+      <a href="tel:+000000000" class="btn btn-dark">Llamar ahora</a>
+      <a href="mailto:contacto@nextera.com" class="btn btn-outline-dark">Enviar correo</a>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- FOOTER -->
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <div>
-        <h4>Corporación NextEra</h4>
-        <p>Financiamiento estratégico para empresarios y proyectos de alto impacto.</p>
-      </div>
-      <div>
-        <h5>Contacto</h5>
-        <p>📞 +00 000 000 000</p>
-        <p>✉️ contacto@nextera.com</p>
-      </div>
-      <div>
-        <h5>Enlaces</h5>
-        <a href="#nosotros">Nosotros</a>
-        <a href="#servicios">Servicios</a>
-        <a href="#proceso">Proceso</a>
-      </div>
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <h4>Corporación NextEra</h4>
+      <p>Financiamiento estratégico para empresarios y proyectos de alto impacto en Latinoamérica.</p>
     </div>
-    <div class="footer-bottom">
-      <p>© 2025 Corporación NextEra. Todos los derechos reservados.</p>
+    <div>
+      <h5>Contacto</h5>
+      <p>📞 +00 000 000 000</p>
+      <p>✉️ contacto@nextera.com</p>
     </div>
-  </footer>
+    <div>
+      <h5>Enlaces</h5>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#proceso">Proceso</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 Corporación NextEra. Todos los derechos reservados.</p>
+  </div>
+</footer>
 
-  <script src="js/main.js"></script>
+<script>
+  // Header con fondo al hacer scroll
+  const header = document.getElementById('header');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 40);
+  });
+
+  // Menú móvil
+  const toggle = document.getElementById('navToggle');
+  const nav = document.getElementById('mainNav');
+  toggle.addEventListener('click', () => nav.classList.toggle('open'));
+
+  // Cerrar menú al hacer click en un enlace
+  nav.querySelectorAll('a').forEach(a =>
+    a.addEventListener('click', () => nav.classList.remove('open'))
+  );
+</script>
+
 </body>
 </html>
